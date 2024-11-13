@@ -58,6 +58,12 @@ public class MicrowaveScript : MonoBehaviour
                 }
             }
         }
+
+        if (other.gameObject.transform.parent != null && other.gameObject.transform.parent.name == "WholePlate")
+        {
+            other.gameObject.tag = "Untagged";
+        }
+
         if (other.CompareTag("Interactable"))
         {
             if (microwaveAnimator.GetBool("Nyitva"))
@@ -66,7 +72,6 @@ public class MicrowaveScript : MonoBehaviour
                 {
                     PlaceItemOnPlate(other.gameObject);
                 }
-
             }
         }
     }
